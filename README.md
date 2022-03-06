@@ -1,6 +1,6 @@
 DBT Project
 
-This DPT Project create a model in Snowflake. 
+This Project create a models in Snowflake. 
 
 
 
