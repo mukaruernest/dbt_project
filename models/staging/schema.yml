@@ -1,21 +1,19 @@
-
 version: 2
 
-models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+sources:
+  - name: snowflake_sample_data
+    description: 'A data source from snowflake sample data'
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF10
+    tables:
+      - name: customer
+      
+model:
+  - name: customer_household
+    description: 'A table showing customer with market secmentation as house hold'
     columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: C_CUSTKEY
         tests:
           - unique
           - not_null
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
